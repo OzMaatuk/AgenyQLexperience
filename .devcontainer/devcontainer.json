@@ -1,0 +1,31 @@
+{
+  "name": "Playwright with AgentQL",
+  "image": "mcr.microsoft.com/playwright/python:v1.39.0",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/bin/python",
+        "python.testing.pytestEnabled": true,
+        "terminal.integrated.cwd": "/workspace"
+
+      },
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-vscode-remote.remote-containers"
+      ]
+    }
+  },
+  "postCreateCommand": "mkdir -p /workspace && cd /workspace && pip install --upgrade pip && pip install -r requierments.txt && playwright install",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/common-utils:2.5.2": {}
+  },
+  "remoteEnv": {
+    "PYTHONUNBUFFERED": "1",
+    "PLAYWRIGHT_BROWSERS_PATH": "/workspace/.playwright"
+  },
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "workspaceFolder": "/workspace",
+  "runArgs": ["--workdir", "/workspace"]
+}

@@ -1,0 +1,3 @@
+https://docs.agentql.com/examples/python-examples
+https://github.com/tinyfish-io/agentql/blob/main/examples/python/close_popup/main.py
+https://github.com/mohammed97ashraf/ApplyWizard/blob/main/agental_utils/fill_form.py
